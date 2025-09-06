@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body{
+    margin:0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3.5fr 1fr;
+    grid-template-rows: 50px 50px 1fr 1fr; 
+    grid-template-areas:
+        "sidebar search search"
+        "sidebar action action"
+        "sidebar athlete announcement"
+        "sidebar athlete trending";  
+    height: 100vh;
+    width: 100vw;
+}
+
+.sidebar {
+    padding: 20px;
+    background-color: #1992D4;
+    color: white;
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+#dashboard-title{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.sidebar-list{
+    font-weight: 700;
+    font-size: 1.25em;
+}
+
+li + li {
+  margin-top: 12px;
+}
+
+.search {
+    grid-area: search;
+    display: inline-block;
+}
+.action {
+    grid-area: action;
+    display: inline-block;
+}
+.athletes {
+    grid-area: athlete;
+}
+.announcements {
+    grid-area: announcement;
+}
+.trending {
+    grid-area: trending;
+}
