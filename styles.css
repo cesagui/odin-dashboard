@@ -174,9 +174,35 @@ img[src="src/weight-lifter.svg"]{
     color: black;
     margin-bottom: 4px;
 }
+
 .announcements {
     grid-area: announcement;
 }
+
+.announcements>p{
+    font-weight: 600;
+    font-size: 1.25em;
+    margin-top: 35px;
+}
+
+.announcement-wrapper{
+    background-color: white;
+    border-radius: 12px;
+    font-size: 0.825em;
+    padding: 1em 2em;
+    margin: 0;
+    margin-right: 40px;
+    box-shadow: 0px 12px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.announcement-wrapper>*>*:first-child{
+    font-weight: 600;
+}
+
+.announcement-wrapper>li+li{
+    border-top: 1px solid #ccc;
+}
+
 
 .trending {
     grid-area: trending;
@@ -187,6 +213,7 @@ img[src="src/weight-lifter.svg"]{
     font-size: 1.5em;
     margin-bottom: 12px;
 }
+
 .trending-wrapper{
     background-color: white;
     border-radius: 12px;
