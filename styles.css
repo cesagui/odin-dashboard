@@ -5,6 +5,7 @@ html, body{
     padding: 0;
     font-family: 'Roboto';
     box-sizing: border-box;
+    background-color:#E2E8F0;
 }
 
 ul {
@@ -18,13 +19,14 @@ img[src="src/weight-lifter.svg"]{
 
 .container{
     display: grid;
-    grid-template-columns: 1fr 3.5fr 1fr;
-    grid-template-rows: 75px 75px 1fr 1fr; 
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 75px 75px 1fr 1fr 25px; 
     grid-template-areas:
         "sidebar search search"
         "sidebar action action"
         "sidebar athlete announcement"
-        "sidebar athlete trending";  
+        "sidebar athlete trending"
+        "sidebar . ."; 
     height: 100vh;
     width: 100vw;
 }
@@ -52,7 +54,7 @@ img[src="src/weight-lifter.svg"]{
     font-size: 1.25em;
 }
 
-li + li {
+.sidebar-list > li + li {
   margin-top: 12px;
 }
 
@@ -62,6 +64,7 @@ li + li {
     display: flex;
     justify-content: space-between;
     padding: 20px 40px;
+    background-color: white;
 }
 
 .search>*{
@@ -96,7 +99,9 @@ li + li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 28px 40px;
+    background-color: white;
+    box-shadow: 0px 12px 10px -5px rgba(0, 0, 0, 0.3);
 }
 .left-action{
     display: flex;
@@ -134,10 +139,79 @@ li + li {
 
 .athletes {
     grid-area: athlete;
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2em repeat(3, 1fr);
+    gap: 24px;
+    padding: 16px;
+}
+
+#athlete-header{
+    grid-area: 1 / 1 / span 1 / span 2;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.athlete-card{
+    background-color: #FFFFFF;
+    padding: 24px;
+    border-radius: 16px;
+    border-left-style: solid;
+    border-width: 12px;
+    border-color: #F0B429;
+    box-shadow: 0px 12px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.athlete-card>*{
+    margin:0;
+    color: #6B6B6B;
+}
+
+.athlete-card>*:first-child{
+    font-size: 1.25em;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 4px;
 }
 .announcements {
     grid-area: announcement;
 }
+
 .trending {
     grid-area: trending;
+}
+
+.trending > p {
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 12px;
+}
+.trending-wrapper{
+    background-color: white;
+    border-radius: 12px;
+    margin-right: 40px;
+    padding: 12px;
+    margin-top: 0;
+    box-shadow: 0px 12px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.trending-wrapper>li{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.875em;
+}
+
+.trending-wrapper>li + li{
+    margin-top: 12px;
+}
+
+.trending-wrapper>li>:nth-child(2){
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-wrapper>li>:nth-child(2)>:nth-child(2){
+    color:#6B6B6B;
 }
