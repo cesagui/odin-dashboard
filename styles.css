@@ -32,13 +32,19 @@ img[src="src/weight-lifter.svg"]{
 }
 
 .sidebar {
-    padding: 20px;
+    padding: 16px;
     background-color: #1992D4;
     color: white;
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
     gap: 1.5em;
+}
+
+.sidebar-list>li{
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 #dashboard-title{
@@ -50,6 +56,8 @@ img[src="src/weight-lifter.svg"]{
 }
 
 .sidebar-list{
+    padding-inline-start: 0px;
+    padding-left: 1em;
     font-weight: 700;
     font-size: 1.25em;
 }
